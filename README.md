@@ -1,3 +1,6 @@
+This project builds on the MathCAMPS repository, creating an automatic worksheet generator on top of it.
+
+MathCAMPS description:
 # MathCAMPS - A dataset of mathematical problems synthesized from an educational curriculum
 
 ## Overview 

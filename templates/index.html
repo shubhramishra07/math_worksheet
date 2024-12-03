@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Worksheet Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        select, input, button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Math Worksheet Generator</h1>
+        <form id="worksheetForm">
+            <label for="standard">Select Common Core Standard:</label>
+            <select id="standard" name="standard" required>
+                <option value="" disabled selected>Select a standard</option>
+                <option value="K.CC.C.7">K.CC.C.7</option>
+                <option value="K.OA.A.4">K.OA.A.4</option>
+                <option value="K.OA.A.5">K.OA.A.5</option>
+                <option value="K.NBT.A.1">K.NBT.A.1</option>
+                <option value="1.OA.A.1">1.OA.A.1</option>
+                <option value="1.OA.A.2">1.OA.A.2</option>
+                <option value="1.OA.D.8">1.OA.D.8</option>
+                <option value="2.OA.A.1">2.OA.A.1</option>
+                <option value="2.NBT.B.5">2.NBT.B.5</option>
+                <option value="2.NBT.B.6">2.NBT.B.6</option>
+                <option value="2.NBT.B.7">2.NBT.B.7</option>
+                <option value="2.MD.B.5">2.MD.B.5</option>
+                <option value="2.MD.C.8">2.MD.C.8</option>
+                <option value="3.OA.A.3">3.OA.A.3</option>
+                <option value="3.OA.A.4">3.OA.A.4</option>
+                <option value="3.OA.C.7">3.OA.C.7</option>
+                <option value="3.OA.D.8">3.OA.D.8</option>
+                <option value="3.MD.D.8-triangle">3.MD.D.8-triangle</option>
+                <option value="3.MD.D.8-quadrilateral">3.MD.D.8-quadrilateral</option>
+                <option value="3.MD.D.8-polygon">3.MD.D.8-polygon</option>
+                <option value="3.NBT.A.2">3.NBT.A.2</option>
+                <option value="4.OA.A.3">4.OA.A.3</option>
+                <option value="4.OA.B.4">4.OA.B.4</option>
+                <option value="4.NBT.B.4">4.NBT.B.4</option>
+                <option value="4.NBT.B.5">4.NBT.B.5</option>
+                <option value="4.NBT.B.6">4.NBT.B.6</option>
+                <option value="4.NF.A.2">4.NF.A.2</option>
+                <option value="4.MD.A.2-decimal">4.MD.A.2-decimal</option>
+                <option value="4.MD.A.2-fraction">4.MD.A.2-fraction</option>
+                <option value="4.MD.A.3">4.MD.A.3</option>
+                <option value="5.OA.A.1">5.OA.A.1</option>
+                <option value="5.NBT.B.5">5.NBT.B.5</option>
+                <option value="5.NBT.B.6">5.NBT.B.6</option>
+                <option value="5.NBT.B.7">5.NBT.B.7</option>
+                <option value="5.NF.A.1">5.NF.A.1</option>
+                <option value="5.NF.A.2">5.NF.A.2</option>
+                <option value="5.NF.B.4">5.NF.B.4</option>
+                <option value="6.NS.B.2">6.NS.B.2</option>
+                <option value="6.NS.B.3">6.NS.B.3</option>
+                <option value="6.EE.A.1">6.EE.A.1</option>
+                <option value="6.EE.B.7">6.EE.B.7</option>
+                <option value="7.NS.A.1-fraction">7.NS.A.1-fraction</option>
+                <option value="7.NS.A.1-decimal">7.NS.A.1-decimal</option>
+                <option value="7.NS.A.2">7.NS.A.2</option>
+                <option value="7.NS.A.3-fraction">7.NS.A.3-fraction</option>
+                <option value="7.NS.A.3-decimal">7.NS.A.3-decimal</option>
+                <option value="8.EE.A.2">8.EE.A.2</option>
+                <option value="8.EE.C.7">8.EE.C.7</option>
+                <option value="8.EE.C.8">8.EE.C.8</option>
+            </select>
+            
+            <label for="themes">(Optional) Enter Comma-Separated Custom Themes:</label>
+            <input type="text" id="themes" name="themes" placeholder="E.g., space, sports, animals">
+            
+            <label for="numProblems">Number of Problems:</label>
+            <input type="number" id="numProblems" name="numProblems" min="1" max="100" required>
+            
+            <button type="button" onclick="createWorksheet()">Create Worksheet</button>
+        </form>
+        
+        <div id="pdfDisplay" style="display: none;">
+            <h2>Your Worksheet</h2>
+            <iframe id="pdfViewer" style="width: 100%; height: 500px;" src="/download-worksheet"></iframe>
+            <a id="downloadLink" href="/download-worksheet" download="Math_Worksheet.pdf">Download PDF</a>
+        </div>
+        
+    </div>
+
+    <script>
+        async function createWorksheet() {
+            const standard = document.getElementById('standard').value;
+            const themes = document.getElementById('themes').value;
+            const numProblems = document.getElementById('numProblems').value;
+
+            if (!standard || !numProblems) {
+                alert('Please select a standard and enter the number of problems.');
+                return;
+            }
+
+            const formData = {
+                standard: standard,
+                themes: themes,
+                numProblems: numProblems
+            };
+
+            try {
+                const response = await fetch('/generate-worksheet', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const pdfUrl = data.pdf_url;
+
+                    // Update the iframe and download link
+                    const pdfViewer = document.getElementById('pdfViewer');
+                    pdfViewer.src = pdfUrl;
+
+                    const downloadLink = document.getElementById('downloadLink');
+                    downloadLink.href = pdfUrl;
+
+                    // Show the PDF section
+                    document.getElementById('pdfDisplay').style.display = 'block';
+                } else {
+                    alert('Error generating worksheet. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to connect to the server. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

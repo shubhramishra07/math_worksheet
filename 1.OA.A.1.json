@@ -1,0 +1,132 @@
+[
+  [
+    {
+      "id": "1.OA.A.1-0-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 8 = (t - 11)]]\n[[question u = ['t']]]\nball",
+      "statement": "A bag of balls has a total of some 't' number of balls. If 11 balls were taken out from the bag and 8 balls left in it, how many balls 't' were initially in the bag?",
+      "new symbolic struct": "[[var b = 11]]\n[[var c = 8]]\n[[question t = ['b + c']]]",
+      "reasoning": "Alright! Let's think about the bag of balls. \n\n1. We started with some number of balls, let's call this \"t\".\n2. We took out 11 balls from the bag.\n3. Now, we have 8 balls left in the bag.\n\nIf we want to know how many balls were in the bag at first, we can add the 8 balls that are left back to the 11 balls we took out. \n\nSo, add them together: 11 + 8 = 19.\n\nThis means we initially had 19 balls in the bag. Answer: 19",
+      "answer": "19",
+      "tag": "original problem",
+      "theme": "ball"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-1-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 8 = (f - 11)]]\n[[question q = ['f']]]\nball",
+      "statement": "Jake has a number of balls in his sack. After giving 11 of them away, he's left with 8 balls. How many balls did Jake originally have in his sack?",
+      "new symbolic struct": "[[var x = 11]]\n[[var y = 8]]\n[[question z = ['x + y']]]",
+      "reasoning": "To find out how many balls Jake originally had, we need to think about what he did. He gave away 11 balls and then had 8 balls left. To figure out how many he had at the start, we need to add the 11 balls he gave away back to the 8 balls he still has. So, 8 balls plus 11 balls equals 19 balls. That's how many balls Jake started with. Answer: 19",
+      "answer": "19",
+      "tag": "original problem",
+      "theme": "ball"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-3-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 5 = (10 - n)]]\n[[question j = ['n']]]\nbook",
+      "statement": "Emily has 10 books in her collection. After sorting out some books she no longer needs, she is left with 5. How many books did she sort out?",
+      "new symbolic struct": "[[var x = 10]]\n[[var y = 5]]\n[[question z = ['x - y']]]",
+      "reasoning": "Emily started with 10 books. After sorting out some books she didn't need, she ended up with 5 books. To find out how many books she sorted out, we subtract the books she has now from the total she started with: 10 books - 5 books = 5 books. So, Emily sorted out 5 books. Answer: 5",
+      "answer": "5",
+      "tag": "original problem",
+      "theme": "book"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-4-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 17 = (19 - q)]]\n[[question e = ['q']]]\nhouse",
+      "statement": "A house needs 19 light bulbs for different rooms, but currently it only has 17 light bulbs. How many more light bulbs does the house need?",
+      "new symbolic struct": "[[var a = 19]]\n[[var b = 17]]\n[[question c = ['a - b']]]",
+      "reasoning": "The house needs 19 light bulbs in total. Right now, there are only 17 light bulbs. To find out how many more light bulbs are needed, you can start from 17 and count up to 19. \n\nStart at 17, then 18 is one more, and 19 is two more. \n\nSo, the house needs 2 more light bulbs. Answer: 2",
+      "answer": "2",
+      "tag": "original problem",
+      "theme": "house"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-5-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 6 = (4 + q)]]\n[[question y = ['q']]]\nhamster",
+      "statement": "A hamster has 4 toys in its cage. After its owner gives it some more, the number of toys increases to 6. How many new toys did the hamster's owner give it?",
+      "new symbolic struct": "[[var a = 4]]\n[[var t = 6]]\n[[question n = ['t - a']]]",
+      "reasoning": "The hamster starts with 4 toys. After getting some more toys, it has 6 toys in total. To find out how many new toys it got, we can count up from 4 to 6. After 4 comes 5, then 6. So, the hamster received 2 new toys. Answer: 2",
+      "answer": "2",
+      "tag": "original problem",
+      "theme": "hamster"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-6-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 5 = (3 + a)]]\n[[question d = ['a']]]\ncar",
+      "statement": "If there are 5 cars in the parking lot and 3 of them are blue, how many cars are not blue?",
+      "new symbolic struct": "[[var p = 5]]\n[[var q = 3]]\n[[question r = ['p - q']]]",
+      "reasoning": "There are 5 cars in total. We know that 3 of them are blue. To find out how many are not blue, we take the total number of cars (5) and subtract the number of blue cars (3). So, 5 minus 3 is 2. Therefore, there are 2 cars that are not blue. Answer: 2",
+      "answer": "2",
+      "tag": "original problem",
+      "theme": "car"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-7-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 2 = (e - 2)]]\n[[question h = ['e']]]\nshirt",
+      "statement": "Henry found a shirt he really liked at a store. It cost 2 dollars more than the amount he had. If Henry had 2 dollars, how much did the shirt cost?",
+      "new symbolic struct": "[[var x = 2]]\n[[var y = x + 2]]\n[[question z = ['y']]]",
+      "reasoning": "Henry had 2 dollars. The shirt cost 2 dollars more than he had. To find the shirt's cost, we add the extra 2 dollars to the 2 dollars Henry had. \n\n2 dollars + 2 dollars = 4 dollars. \n\nSo, the shirt cost 4 dollars. Answer: 4",
+      "answer": "4",
+      "tag": "original problem",
+      "theme": "shirt"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-9-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 3 = (m - 2)]]\n[[question r = ['m']]]\nwater",
+      "statement": "There are 3 litres of water in a jug now. If 2 litres are added, how many litres of water would be in the jug then?",
+      "new symbolic struct": "[[var a = 3]]\n[[var b = 2]]\n[[question c = ['a + b']]]",
+      "reasoning": "You have 3 litres of water in the jug. If you add 2 more litres, you mix the 2 litres with the 3 litres already there. When you combine them, you have a total of 5 litres of water in the jug. So, there would be 5 litres of water in the jug then. Answer: 5",
+      "answer": "5",
+      "tag": "original problem",
+      "theme": "water"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-10-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 17 = (12 + y)]]\n[[question m = ['y']]]\nshirt",
+      "statement": "Marcus has a total of 17 shirts. If he bought 12 of those shirts last month, how many shirts did he already have before the recent purchase?",
+      "new symbolic struct": "[[var n = 12]]\n[[var t = (17 - n)]]\n[[question s = ['t']]]",
+      "reasoning": "To find out how many shirts Marcus had before buying more, we start with the total number of shirts he has now, which is 17. Then, we take away the 12 shirts he bought last month. \n\nSo, we do the math: 17 shirts (total) - 12 shirts (bought last month) = 5 shirts. \n\nThis means Marcus had 5 shirts before he bought more. Answer: 5",
+      "answer": "5",
+      "tag": "original problem",
+      "theme": "shirt"
+    }
+  ],
+  [
+    {
+      "id": "1.OA.A.1-11-0",
+      "standard": "1.OA.A.1",
+      "symbolic-struct": "[[var 7 = (11 - e)]]\n[[question j = ['e']]]\nstar",
+      "statement": "In a galaxy, there are 11 bright stars. However, an astronaut notices that the brightness from 7 stars is due to the reflection of their bare metal spaceship. How many actual bright stars are there in the galaxy?",
+      "new symbolic struct": "[[var x = 11]]\n[[var y = 7]]\n[[question z = ['x - y']]]",
+      "reasoning": "Let's solve the problem together:\n\n1. The astronaut notices 11 stars that look bright.\n2. But, 7 of those stars are actually shiny because they are just reflections in the spaceship, not real bright stars.\n\nTo find out how many real bright stars there are, we take the 11 stars and take away the 7 reflection stars. \n\n11 - 7 = 4\n\nSo, there are 4 actual bright stars in the galaxy. Answer: 4",
+      "answer": "4",
+      "tag": "original problem",
+      "theme": "star"
+    }
+  ]
+]
